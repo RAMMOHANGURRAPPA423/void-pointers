@@ -1,0 +1,21 @@
+#include<stdio.h>
+int swap(void* a,void* b);
+int main(){
+    
+    void* a;
+    void* b;
+    
+    int val1=(int*)&a;
+    int val2=(int*)&b;
+    printf("enter the values of a and b:");
+    scanf("%d %d",&a,&b);
+    swap(&a,&b);
+    printf("a=%d\n b=%d",a,b);
+    return 0;
+}
+int swap(void* a,void* b){
+    int temp;
+    temp=*(int*)a;
+    *(int*)a=*(int*)b;
+    *(int*)b=temp;
+}
